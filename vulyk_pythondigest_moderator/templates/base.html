@@ -1,0 +1,60 @@
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<script id="names_template" type="text/x-handlebars-template">
+    {% raw %}
+    <h4 class="task-head">
+        <p><a href="{{ link }}" target="_blank">{{ data.title }} (ссылка)</a></p>
+
+        {{#if data.description }}
+        <p>Короткое описание: {{ data.description }}</p>
+        {{/if}}
+
+    </h4>
+
+    <div class="btn-group selection" role="group">
+        <button type="button"
+                class="btn btn-success btn-lg"
+                data-value="IS_INTERESTING">
+            <span class="pull-left">Интересно</span>
+        </button>
+
+        <button type="button" class="btn btn-danger btn-lg"
+                data-value="IS_NOT_INTERESTING">
+            <span class="pull-left">Неинтересно</span>
+        </button>
+    </div>
+
+
+    {{#if data.article }}
+    <hr>
+    <br>
+    <br>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <p>Ниже вы видите текст статьи по ссылке. По нему можно быстро
+                понять ссылка достойна прочтения или нет</p>
+            <p>Просим обратить внимание, что текст по ссылке и здесь может не
+                совпадать (если в блоке ничего нет, то перейдите по ссылке)</p>
+
+        </div>
+        <div class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="item-article-text">
+                    <iframe srcdoc="{{ data.article }}" width="100%" height="300px" allowTransparency></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {% endraw %}
+</script>
+
+<div id="out">
+    <input type="hidden" name="result" value=""/>
+</div>
+
+
+<h4><b>Подсказка:</b> Используйте цифры <b>1</b><small>(интересно)</small> или <b>2</b> <small>(неинтересно)</small> на клавиатуре, чтобы быстрее выбирать ответы</h4>
