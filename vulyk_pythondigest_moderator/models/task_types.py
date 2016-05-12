@@ -22,11 +22,12 @@ class PythonDigestModeratorTaskType(AbstractTaskType):
     helptext_template = 'help.html'
     type_name = 'pythondigest_moderator_task'
 
-    redundancy = 1
+    redundancy = 3
 
     JS_ASSETS = ['static/scripts/handlebars.js',
                  'static/scripts/jquery.serializejson.js',
                  'static/scripts/base.js', ]
 
     CSS_ASSETS = ['static/styles/bootstrap-social.css',
-                  'static/styles/base.css', ]
+                  'static/styles/base.css',
+                  'static/base/styles.css', ]
