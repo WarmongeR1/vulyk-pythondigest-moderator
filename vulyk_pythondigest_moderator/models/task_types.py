@@ -30,4 +30,4 @@ class PythonDigestModeratorTaskType(AbstractTaskType):
 
     CSS_ASSETS = ['static/styles/bootstrap-social.css',
                   'static/styles/base.css',
-                  'static/styles/base/styles.css', ]
+                  'static/styles/base/style.css', ]
