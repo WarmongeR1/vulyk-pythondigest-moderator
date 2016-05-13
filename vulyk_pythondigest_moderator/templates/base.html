@@ -5,7 +5,8 @@
 <script id="names_template" type="text/x-handlebars-template">
     {% raw %}
     <h4 class="task-head">
-        <p><a href="{{ link }}" target="_blank">{{ data.title }} (ссылка)</a></p>
+        <p><a href="{{ link }}" target="_blank">{{ data.title }} (ссылка)</a>
+        </p>
 
         {{#if data.description }}
         <p>Короткое описание: {{ data.description }}</p>
@@ -13,22 +14,24 @@
 
     </h4>
 
-    <div class="btn-group selection" role="group">
+    <div class="btn-group selection text-center pull-center" role="group">
         <button type="button"
-                class="btn btn-success btn-lg"
+                class="btn btn-success"
                 data-value="IS_INTERESTING">
-            <span class="pull-left">Интересно</span>
+            <span>Интересно</span>
         </button>
 
-        <button type="button" class="btn btn-danger btn-lg"
-                data-value="IS_NOT_INTERESTING">
-            <span class="pull-center">Неинтересно</span>
-        </button>
-
-        <button type="button" class="btn btn-info btn-lg"
+        <button type="button" class="btn btn-info"
                 data-value="IS_BAD">
-            <span class="pull-left">Битая ссылка/без контента</span>
+            <span>Битая ссылка/без контента</span>
         </button>
+
+        <button type="button" class="btn btn-danger"
+                data-value="IS_NOT_INTERESTING">
+            <span>Неинтересно</span>
+        </button>
+
+
     </div>
 
 
@@ -49,7 +52,8 @@
             <div class="panel-body">
                 <div class="item-article-text">
                     <iframe srcdoc="{{ data.article }}" sandbox="allow-scripts"
-                            width="100%" height="300px" allowTransparency></iframe>
+                            width="100%" height="300px"
+                            allowTransparency></iframe>
                 </div>
             </div>
         </div>
@@ -63,4 +67,11 @@
 </div>
 
 
-<h4><b>Подсказка:</b> Используйте цифры <b>1</b><small>(интересно)</small> или <b>2</b> <small>(неинтересно)</small> и <b>3</b> <small>(битая)</small> на клавиатуре, чтобы быстрее выбирать ответы</h4>
+<h4><b>Подсказка:</b> Используйте цифры <b>1</b>
+    <small>(интересно)</small>
+    или <b>3</b>
+    <small>(неинтересно)</small>
+    и <b>2</b>
+    <small>(битая)</small>
+    на клавиатуре, чтобы быстрее выбирать ответы
+</h4>
